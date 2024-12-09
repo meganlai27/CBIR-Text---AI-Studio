@@ -11,9 +11,8 @@ This project was completed in various stages:
 3. Creating Word Embeddings
 4. Finding results
 5. Evaluating the results of the different models used
-6. Automatically generate captions diagnosing an image
-
-## Data Pre-processing
+6. Automatically generate captions diagnosing an image. 
+<!-- ## Data Pre-processing -->
 
 ## Models
 ### PLIP (Pathology Language and Image Pre-training)
@@ -22,7 +21,7 @@ This project was completed in various stages:
 
 
 
-## Evaluations
+<!-- ## Evaluations -->
 
 ## Setup:
 1. clone the PLIP repository and place this file in the top directory (plip):  
