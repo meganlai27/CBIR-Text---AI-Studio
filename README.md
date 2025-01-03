@@ -15,23 +15,24 @@ This project was completed in various stages:
 <!-- ## Data Pre-processing -->
 
 ## Models
-### PLIP (Pathology Language and Image Pre-training)
-### PubMedBERT
-### BioWordVec
+### [PLIP (Pathology Language and Image Pre-training)](https://github.com/PathologyFoundation/plip)
+### [PubMedBERT](https://huggingface.co/microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract)
+### [BioWordVec](https://github.com/ncbi-nlp/BioSentVec)
 
 
 
 <!-- ## Evaluations -->
 
-## Setup:
-1. clone the PLIP repository and place this file in the top directory (plip):  
+## How to use:
+1. Clone this repository.
+2. Clone the PLIP repository into the top level folder of this repository (used to access the PLIP model):  
 ```
 git clone https://github.com/PathologyFoundation/plip.git
 ```
 
-2. download BioWordVec bin file (13GB) from https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/BioSentVec/BioWordVec_PubMed_MIMICIII_d200.vec.bin
+3. download BioWordVec bin file (13GB) from https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/BioSentVec/BioWordVec_PubMed_MIMICIII_d200.vec.bin
 
-3. Recommended to create an environment :
+4. Recommended to create an environment:
 ```
 // (in bash)
 python3 -m venv .topn
@@ -40,6 +41,21 @@ source .topn/Scripts/activate
 
 5. Install libraries: numpy, torch, pillow, sentence-transformers, gensim, datasets
 
+## Functions:
+The models.py file contains classes to create text embeddings, calculate semantic similarity, and evaluate results for the three models (PLIP, BioWordVec, and PubMedBERT).
+
+## Evaluation:
+The results were evaluated by Novartis Pathologist, rating the relevance of the queried caption and image pair from 0 to 3.
+0: No relevance to the query.
+1: Querying an image with a similar stain.
+2: Querying an image with the correct organ.
+3: Perfect match (stain, organ, diagnosis)
+
+Overall results conclude that PLIP had the highest success rate, with BioWordVec following in second, and PubMedBERT having a low performance.
+
+PLIP: 
+BioWordVec:
+PubMedBERT:
 
 ## Caption Generation with LLaVa-Med
 
