@@ -45,17 +45,13 @@ source .topn/Scripts/activate
 The models.py file contains classes to create text embeddings, calculate semantic similarity, and evaluate results for the three models (PLIP, BioWordVec, and PubMedBERT).
 
 ## Evaluation:
-The results were evaluated by Novartis Pathologist, rating the relevance of the queried caption and image pair from 0 to 3.
-0: No relevance to the query.
-1: Querying an image with a similar stain.
-2: Querying an image with the correct organ.
-3: Perfect match (stain, organ, diagnosis)
+The results were evaluated by Novartis Pathologist, rating the relevance of the queried caption and image pair from 0 to 3, a score of 0 indicating there is no relevance to the query and 3 indicating it is a relevant match.
 
-Overall results conclude that PLIP had the highest success rate, with BioWordVec following in second, and PubMedBERT having a low performance.
+Overall results conclude that BioWordVec had the highest success rate, with PLIP following in second, and PubMedBERT having a low performance.
 
-PLIP: 
-BioWordVec:
-PubMedBERT:
+PLIP: 80%
+BioWordVec: 93.3%
+PubMedBERT: 17.8%
 
 ## Caption Generation with LLaVa-Med
 
