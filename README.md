@@ -19,18 +19,17 @@ This project was completed in various stages:
 ### [PubMedBERT](https://huggingface.co/microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract)
 ### [BioWordVec](https://github.com/ncbi-nlp/BioSentVec)
 
-
-
-<!-- ## Evaluations -->
+## Data:
+The histopathology dataset used was downloaded from the [arch dataset](https://warwick.ac.uk/fac/cross_fac/tia/data/arch).
 
 ## How to use:
 1. Clone this repository.
-2. Clone the PLIP repository into the top level folder of this repository (used to access the PLIP model):  
+2. Clone the PLIP repository into the src folder (used to access the PLIP model):  
 ```
 git clone https://github.com/PathologyFoundation/plip.git
 ```
 
-3. download BioWordVec bin file (13GB) from https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/BioSentVec/BioWordVec_PubMed_MIMICIII_d200.vec.bin
+3. Download BioWordVec bin file (13GB) from [here](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/BioSentVec/BioWordVec_PubMed_MIMICIII_d200.vec.bin) and place it in a local folder. This file path will be passed in when creating a BioWordVec object.
 
 4. Recommended to create an environment:
 ```
@@ -40,6 +39,8 @@ source .topn/Scripts/activate
 ```
 
 5. Install libraries: numpy, torch, pillow, sentence-transformers, gensim, datasets
+
+6. Models can be tested in the example_usage.ipynb file.
 
 ## Functions:
 The models.py file contains classes to create text embeddings, calculate semantic similarity, and evaluate results for the three models (PLIP, BioWordVec, and PubMedBERT).
